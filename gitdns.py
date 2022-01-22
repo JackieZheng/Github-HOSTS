@@ -2,7 +2,7 @@
 Title: 快速获Github网站的IP地址
 Author: JackieZheng
 Date: 2022-01-20 19:37:35
-LastEditTime: 2022-01-21 16:13:46
+LastEditTime: 2022-01-22 09:14:49
 LastEditors: Please set LastEditors
 Description:
 FilePath: \\vsTemp\\gitdns.py
@@ -67,12 +67,15 @@ try:
     # 备份 覆盖 系统hosts文件
     shutil.move(orign_hosts,orign_hosts+'.bak')
     shutil.copy(temp_hosts,orign_hosts)
+    INFOR_0="hosts文件已更新成功"
+    print(INFOR_0)
 except:
     INFOR_1="已经生成新hosts文件："+temp_hosts
     INFOR_2="请手工复制覆盖原系统hosts文件"
     print(INFOR_1,INFOR_2,sep = '\n')
-    INFOR_3="修改完后回车继续 自动执行 清理DNS缓存（ipconfig/flushdns） "
-    print(INFOR_3)
+
+INFOR_3="修改完后继续 执行 清理DNS缓存（ipconfig/flushdns） "
+print(INFOR_3)
 
 os.system('pause')
 
